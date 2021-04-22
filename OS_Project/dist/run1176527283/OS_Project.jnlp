@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="OS_Project.jnlp">
+    <information>
+        <title>OS_Project</title>
+        <vendor>RENAD</vendor>
+        <description>null</description>
+        <offline-allowed/>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="9+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="OS_Project.jar" size="5051" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="800" height="600" main-class="org.xemacscode.demo.Main" name="Main"/>
+</jnlp>
+

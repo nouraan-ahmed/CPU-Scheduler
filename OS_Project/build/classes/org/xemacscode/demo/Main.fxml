@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="599.0" prefWidth="1143.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="org.xemacscode.demo.MainController">
+   <children>
+      <BarChart layoutX="287.0" layoutY="38.0" prefHeight="428.0" prefWidth="578.0" style="-fx-background-color: #ffffff;">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button fx:id="draw" layoutX="287.0" layoutY="487.0" mnemonicParsing="false" onAction="#Draw" prefHeight="26.0" prefWidth="155.0" text="Draw" />
+      <Button fx:id="reset" layoutX="709.0" layoutY="487.0" mnemonicParsing="false" onAction="#Reset" prefHeight="26.0" prefWidth="155.0" text="Reset" />
+      <Text fill="#79d1e7" layoutX="41.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Your Data pls!" wrappingWidth="253.3367156982422">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="arr_time" layoutX="41.0" layoutY="140.0" prefHeight="26.0" prefWidth="164.0" />
+      <Text fill="#fcfafa" layoutX="41.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arreval Time" wrappingWidth="170.936767578125">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="bur_time" layoutX="41.0" layoutY="228.0" prefHeight="26.0" prefWidth="164.0" />
+      <Text fill="#fcfafa" layoutX="41.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Burst Time" wrappingWidth="170.936767578125">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="par" layoutX="41.0" layoutY="323.0" prefHeight="26.0" prefWidth="164.0" />
+      <Text fill="#fcfafa" layoutX="41.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pariorty" wrappingWidth="170.936767578125">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#79d1e7" layoutX="882.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter which process  and number of process  pls!" wrappingWidth="253.3367156982422">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="num_process" layoutX="881.0" layoutY="239.0" prefHeight="26.0" prefWidth="164.0" />
+      <Text fill="#fcfafa" layoutX="882.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number of process" wrappingWidth="170.936767578125">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="scheduler" layoutX="881.0" layoutY="336.0" onAction="#Select" prefHeight="26.0" prefWidth="171.0" />
+      <Text fill="#fcfafa" layoutX="882.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter which Scheduler" wrappingWidth="192.5367431640625">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tim_slice" layoutX="38.0" layoutY="405.0" prefHeight="26.0" prefWidth="164.0" />
+      <Text fill="#fcfafa" layoutX="38.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Slice" wrappingWidth="170.936767578125">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Button fx:id="add" layoutX="882.0" layoutY="432.0" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="146.0" text="ADD " />
+      <CheckBox fx:id="pree" layoutX="889.0" layoutY="378.0" mnemonicParsing="false" text="Preemptive" textFill="#f2eeee" />
+      <CheckBox fx:id="non_pree" layoutX="890.0" layoutY="406.0" mnemonicParsing="false" text="non-Preemptive" textFill="#ece8e8" />
+      <Button fx:id="add_process" layoutX="55.0" layoutY="487.0" mnemonicParsing="false" onAction="#Add_Process" prefHeight="26.0" prefWidth="91.0" text="ADD Process" />
+      <Label fx:id="lab1" layoutX="526.0" layoutY="538.0" prefHeight="46.0" prefWidth="155.0" text="Label" textFill="#faf4f4">
+         <font>
+            <Font name="AF_Buryidah Normal" size="33.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
