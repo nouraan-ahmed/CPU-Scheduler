@@ -1,0 +1,116 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package priority_non_preemptive;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+// *5122
+ //* @author dell
+ //*/
+public class Priority_non_preemptive {
+
+    public static int cpu=0;
+    public static int p;
+        public static float waiting_time=0;
+   
+public static void compare(int pos,process a[])
+{process t=new process();
+for(int i=pos;i<p;i++)
+{
+    for(int j=pos;j<p;j++)
+    if(a[i].getpriority()<a[j].getpriority())
+{if(a[i].getarrival_time()<=cpu)
+{t=a[i];
+a[i]=a[j];
+a[j]=t;
+}}}}
+
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        
+        int k;
+        process temp=new process();
+        System.out.println("Enter the no of process");
+        p=input.nextInt();
+        process[]arr=new process[p];
+       for(int i=0;i<p;i++)
+        {System.out.printf("Enter the priority of process%d",i+1);
+        System.out.printf("\n");
+            k=input.nextInt();
+              arr[i]=new process();
+              arr[i].setid(i+1);
+            arr[i].setpriority(k);
+            System.out.printf("Enter the arrival_time of process%d",i+1);
+        System.out.printf("\n");
+         k=input.nextInt();
+            arr[i].setarrival_time(k);
+            System.out.printf("Enter the burst_time of process%d",i+1);
+        System.out.printf("\n");
+         k=input.nextInt();
+            arr[i].setburst_time(k);
+        }
+       //sort according to arrival time 
+       
+       for(int i=0;i<p;i++)
+       { for(int j=i+1;j<p;j++)
+       {if(arr[i].getarrival_time()>arr[j].getarrival_time())
+       {temp=arr[i];
+       arr[i]=arr[j];
+       arr[j]=temp;
+       }
+       }}
+       //if two or more process have the same arrival time 
+         for(int i=0;i<p;i++)
+       { for(int j=i+1;j<p;j++)
+       {if(arr[i].getarrival_time()==arr[j].getarrival_time())
+       {if(arr[i].getpriority()>arr[j].getpriority())
+       {temp=arr[i];
+       arr[i]=arr[j];
+       arr[j]=temp;
+       }
+       }}}
+         //to sort according to priority
+         cpu=arr[0].getarrival_time();//to start from it
+         for(int i=1;i<p;i++)
+         {cpu+=arr[i-1].getburst_time();
+         System.out.println(cpu);
+         compare(i,arr);
+         waiting_time+=(cpu-arr[i].getarrival_time());
+           
+         }
+         
+       
+     for(int i=0;i<p;i++)
+   {System.out.printf("the priority of process %d",arr[i].getid());
+     System.out.println("");
+        System.out.println(arr[i].getpriority());
+        
+           System.out.printf("the arrival time of process %d",arr[i].getid());
+     System.out.println("");
+        System.out.println(arr[i].getarrival_time());
+        System.out.printf("the burst time of process %d",arr[i].getid());
+     System.out.println("");
+        System.out.println(arr[i].getburst_time());
+        }
+          System.out.println(waiting_time/p);
+      
+     
+        
+        // TODO code application logic here
+    }
+
+  
+   
+}
+
+   
+
