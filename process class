@@ -1,0 +1,44 @@
+package priority_non_preemptive;
+
+/**
+ *
+ * @author dell
+ */
+public class process {
+    private int priority;
+    private int burst_time;
+    private int arrival_time;
+   private int ID;
+  
+    public void setpriority(int p)
+    {priority=p;
+    }
+    
+      public void setid(int i)
+    {ID=i;
+    }
+     public void setburst_time(int r)
+    {burst_time=r;
+    }
+      public void setarrival_time(int a)
+    {arrival_time=a;
+    }
+      public int getpriority()
+      {
+      return priority;
+      }
+      public int getid()
+      {
+      return ID;
+      }
+     
+      public int getburst_time()
+      {
+      return burst_time;
+      }
+    public int getarrival_time()
+      {
+      return arrival_time;
+      }
+   
+}
